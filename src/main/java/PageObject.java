@@ -82,7 +82,7 @@ public class PageObject {
 
     }
 
-    public void setAlertText() throws InterruptedException {
+    public void promptAlertText() throws InterruptedException {
         prompt.click();
 
         Thread.sleep(3000);
@@ -93,4 +93,5 @@ public class PageObject {
         alt.accept();
 
     }
+
 }
