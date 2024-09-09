@@ -1,5 +1,4 @@
 
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
