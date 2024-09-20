@@ -28,6 +28,6 @@ public class BaseTest {
     pageObject.clickCheckboxDays();
     pageObject.clickLastCheckbox();
     pageObject.clickAlert();
-    pageObject.setAlertText();
+    pageObject.promptAlertText();
  }
 }
