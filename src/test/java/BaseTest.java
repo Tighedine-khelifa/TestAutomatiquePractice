@@ -29,5 +29,6 @@ public class BaseTest {
     pageObject.clickLastCheckbox();
     pageObject.clickAlert();
     pageObject.promptAlertText();
+    pageObject.choseOption();
  }
 }
