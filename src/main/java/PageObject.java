@@ -1,14 +1,17 @@
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 
+import java.sql.SQLOutput;
 import java.time.Duration;
 import java.util.List;
 public class PageObject {
@@ -91,6 +94,23 @@ public class PageObject {
 
         alt.sendKeys("khelifa");
         alt.accept();
+
+    }
+    public void choseOption(){
+        //for select DropDown
+        WebElement country = driver.findElement(By.xpath("//select[@id='country']"));
+        Select listCountry = new Select(country);
+
+         List <WebElement> listCountryOptions = listCountry.getOptions();
+        System.out.println(listCountryOptions.size());
+         for (WebElement option :listCountryOptions){
+            if (option.getText().equals("Canada")){
+                System.out.println("Bravo");
+            }
+          break;
+         }
+    }
+    public void choseOption2(){
 
     }
 
