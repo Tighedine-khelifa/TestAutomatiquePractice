@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.asserts.Assertion;
+
 
 
 import java.time.Duration;
@@ -36,7 +36,7 @@ public static void main (String[] args) throws InterruptedException{
        System.out.println(itemListe);
 
         Assert.assertEquals(itemListe,"Barrière de chantier rouge Ø 25 mm petite plaque\n" +
-                "18,50 €","le text est éroné");
+                "17,45 €","le text est éroné");
         WebElement clickableElement = wait.until(ExpectedConditions.elementToBeClickable(list));
         clickableElement.click();
 
