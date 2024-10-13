@@ -48,9 +48,7 @@ public class BoostrapTable {
                if (buttons.isDisplayed()) { // Vérifier si le deuxième bouton existe
 
 
-                   // Attendre que le bouton soit cliquable
-                   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-                   wait.until(ExpectedConditions.elementToBeClickable(buttons));
+
                    buttons.click();
                    Thread.sleep(4000);
                }
