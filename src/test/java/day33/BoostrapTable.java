@@ -3,10 +3,8 @@ package day33;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
+
 import java.util.List;
 
 public class BoostrapTable {
@@ -48,9 +46,7 @@ public class BoostrapTable {
                if (buttons.isDisplayed()) { // Vérifier si le deuxième bouton existe
 
 
-                   // Attendre que le bouton soit cliquable
-                   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-                   wait.until(ExpectedConditions.elementToBeClickable(buttons));
+
                    buttons.click();
                    Thread.sleep(4000);
                }
@@ -58,11 +54,12 @@ public class BoostrapTable {
            }catch (NoSuchElementException e){
                // Si le bouton n'est pas trouvé, passer à la prochaine itération
                System.out.println("Bouton non trouvé à la ligne " + r + ", passage à la prochaine ligne.");
-               continue;
+
            }catch (ElementClickInterceptedException e){
                // Si le bouton n'est pas cliquable, passer à la prochaine itération
                System.out.println("Le bouton n'est pas cliquable à la ligne " + r + ", passage à la prochaine ligne.");
-               continue; // Passe à l'itération suivante de la boucle
+
+               // Passe à l'itération suivante de la boucle
            }
            }
         }
