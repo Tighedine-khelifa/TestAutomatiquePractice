@@ -1,21 +1,27 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-
-import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.chrome.ChromeDriver;
-
-
-
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
 public class BaseTest {
-    static WebDriver driver;
+    static EventFiringWebDriver driver;
+@Parameters("browser")
 @BeforeClass
- public static void setUp(){
-    WebDriverManager.chromedriver().setup();
-    driver = new ChromeDriver();
+ public static void setUp(@Optional("chrome")String browser){
+
+    if (browser.equalsIgnoreCase("chrome")){
+        WebDriverManager.chromedriver().setup();
+        driver = new EventFiringWebDriver(new ChromeDriver());
+    } else if (browser.equalsIgnoreCase("firefox")) {
+        WebDriverManager.firefoxdriver().setup();
+        driver = new EventFiringWebDriver( new FirefoxDriver());
+    }
+
      driver.get("https://testautomationpractice.blogspot.com/");
      driver.manage().window().maximize();
 
