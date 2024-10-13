@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+
 
 
 import java.sql.SQLOutput;
@@ -80,7 +80,7 @@ public class PageObject {
         Alert alert = driver.switchTo().alert();
         String text = alert.getText();
         System.out.println(text);
-        Assert.assertEquals("I am an alert box!", "I am an alert box!");
+
         alert.dismiss();
 
     }
